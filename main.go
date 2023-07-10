@@ -15,7 +15,7 @@ type item struct {
 }
 
 func (i item) Title() string       { return i.title }
-func (i item) Decription() string  { return i.desc }
+func (i item) Description() string { return i.desc }
 func (i item) FilterValue() string { return i.title }
 
 type model struct {
@@ -50,7 +50,7 @@ func main() {
 		item{title: "Read from .env file", desc: "Read sarufi api key from .env file"},
 		item{title: "Read from OS environment", desc: "Read credentials from OS environment"},
 	}
-	m.options = list.New(options, list.NewDefaultDelegate(), 30, 10)
+	m.options = list.New(options, list.NewDefaultDelegate(), 50, 13)
 	m.options.Title = "Welcome to Sarufi CLI"
 
 	if _, err := tea.NewProgram(m).Run(); err != nil {
