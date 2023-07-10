@@ -50,8 +50,10 @@ func main() {
 		item{title: "Read from .env file", desc: "Read sarufi api key from .env file"},
 		item{title: "Read from OS environment", desc: "Read credentials from OS environment"},
 	}
-	m.options = list.New(options, list.NewDefaultDelegate(), 50, 13)
+	m.options = list.New(options, list.NewDefaultDelegate(), 50, 10)
 	m.options.Title = "Welcome to Sarufi CLI"
+	m.options.SetShowHelp(false)
+	m.options.SetShowStatusBar(false)
 
 	if _, err := tea.NewProgram(m).Run(); err != nil {
 		fmt.Println("What did you do???")
